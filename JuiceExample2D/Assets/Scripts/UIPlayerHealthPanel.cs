@@ -7,7 +7,7 @@ public class UIPlayerHealthPanel : MonoBehaviour
 {
 	[SerializeField] Image[] hearts;
 	public int currentLifes = 8;
-
+	public UIShaker shaker;
 	[SerializeField] float removeLifeAnimTimer = 0.5f;
 
 	public void AddLife ()
@@ -24,6 +24,7 @@ public class UIPlayerHealthPanel : MonoBehaviour
 		} else {
 			hearts [currentLifes].color = new Color (1, 1, 1, 0.2f);
 		}
+		shaker.Shake();
 	}
 
 	IEnumerator RemoveLifeAnimationRoutine (Image sr)
